@@ -3,7 +3,8 @@
     "modid": "llibrary",
     "name": "LLibrary",
     "description": "The lightweight Minecraft modding library",
-    "version": "${version}",
+    "version": "1.5.2",
+    "mcversion": "1.7.10",
     "authorList": [
       "iLexiconn"
     ],
