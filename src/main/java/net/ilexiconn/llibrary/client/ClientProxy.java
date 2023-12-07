@@ -31,7 +31,6 @@ public class ClientProxy extends ServerProxy {
     public static final Minecraft MINECRAFT = Minecraft.getMinecraft();
     public static final int UPDATE_BUTTON_ID = "UPDATE_BUTTON_ID".hashCode();
     public static final List<SnackbarGUI> SNACKBAR_LIST = new ArrayList<>();
-    public static final String[] PATRONS = new Gson().fromJson(WebUtils.readPastebin("aLjMgBAV"), String[].class);
     public static final Timer TIMER = ReflectionHelper.getPrivateValue(Minecraft.class, ClientProxy.MINECRAFT, "timer", "field_71428_T", "Q");
     public static final SurvivalTab INVENTORY_TAB = SurvivalTabHandler.INSTANCE.create("container.inventory", GuiInventory.class);
 

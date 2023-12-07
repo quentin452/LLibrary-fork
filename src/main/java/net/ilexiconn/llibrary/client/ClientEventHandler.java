@@ -169,26 +169,6 @@ public enum ClientEventHandler {
     }
 
     @SubscribeEvent
-    public void onRenderModel(PlayerModelEvent.Render event) {
-        if (LLibrary.CONFIG.hasPatreonEffects() && ClientProxy.PATRONS != null && (ClientProxy.MINECRAFT.gameSettings.thirdPersonView != 0 || event.getEntityPlayer() != ClientProxy.MINECRAFT.thePlayer)) {
-            for (String name : ClientProxy.PATRONS) {
-                if (event.getEntityPlayer().getGameProfile().getId().toString().equals(name)) {
-                    GL11.glPushMatrix();
-                    GL11.glDepthMask(false);
-                    GL11.glDisable(GL11.GL_LIGHTING);
-                    GL11.glTranslatef(0.0F, -1.37F, 0.0F);
-                    this.renderVoxel(event, 1.1F, 0.23F);
-                    GL11.glDepthMask(true);
-                    GL11.glEnable(GL11.GL_LIGHTING);
-                    GL11.glTranslatef(0.0F, 0.128F, 0.0F);
-                    this.renderVoxel(event, 1.0F, 1.0F);
-                    GL11.glPopMatrix();
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
         ConfigHandler.INSTANCE.saveConfigForID(event.modID);
     }
